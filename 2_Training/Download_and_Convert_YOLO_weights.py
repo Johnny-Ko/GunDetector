@@ -12,7 +12,9 @@ root_folder = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 download_folder = os.path.join(root_folder, "2_Training", "src", "keras_yolo3")
 data_folder = os.path.join(root_folder, "Data")
 model_folder = os.path.join(data_folder, "Model_Weights")
-download_script = os.path.join(model_folder, "Download_Weights.py")
+#download_script = os.path.join(model_folder, "Download_Weights.py")
+#To download weight files from Original URL
+download_script = os.path.join(model_folder, "Wget_Download_Weights.py")
 
 if __name__ == "__main__":
     # Delete all default flags
@@ -57,8 +59,10 @@ if __name__ == "__main__":
             [
                 "python",
                 download_script,
-                gdrive_id,
-                os.path.join(download_folder, weights_file),
+ #               gdrive_id,
+                weights_file,
+ #               os.path.join(download_folder, weights_file),
+                download_folder, 
             ]
         )
 
